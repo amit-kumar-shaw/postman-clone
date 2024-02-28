@@ -1,1 +1,17 @@
-<p>request-builder works!</p>
+<mat-form-field appearance="outline">
+  <mat-label>Method</mat-label>
+  <mat-select [(value)]="selectedMethod">
+    <mat-option *ngFor="let method of httpMethods" [value]="method">
+      {{ method }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+  <mat-label>URL</mat-label>
+  <input matInput >
+</mat-form-field>
+
+<button mat-raised-button color="primary" (click)="sendRequest()">
+  Send Request
+</button>

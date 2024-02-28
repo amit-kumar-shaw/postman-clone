@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RequestBuilderComponent } from './components/request-builder/request-builder.component';
+import { ResponseViewerComponent } from './components/response-viewer/response-viewer.component';
 
 @Component({
   selector: 'app-root',
