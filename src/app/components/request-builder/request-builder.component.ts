@@ -12,7 +12,7 @@ export class RequestBuilderComponent implements OnInit {
   requestUrl: string;
   httpMethods: string[] = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'];
 
-  constructor() {
+  constructor(private apiService: ApiService) {
     this.selectedMethod = 'GET'; // Default selection
     this.requestUrl = '';
   }
