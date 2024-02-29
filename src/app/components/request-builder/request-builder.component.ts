@@ -11,6 +11,7 @@ export class RequestBuilderComponent implements OnInit {
   selectedMethod: string;
   requestUrl: string;
   httpMethods: string[] = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'];
+  apiResponse: any;
 
   constructor(private apiService: ApiService) {
     this.selectedMethod = 'GET'; // Default selection
@@ -23,16 +24,17 @@ export class RequestBuilderComponent implements OnInit {
     const request: ApiRequest = {
       method: this.selectedMethod,
       url: this.requestUrl,
-      // Add more properties as needed
     };
     console.log(request);
+    this.apiService.sendRequest(request);
     // this.apiService.sendRequest(request).subscribe({
     //   next: (response) => {
-    //     console.log(response); // Handle the response accordingly
-    //     // You might want to display this response in the UI
+    //     console.log(response);
+    //     this.apiResponse = response;
     //   },
     //   error: (error) => {
-    //     console.error(error); // Handle errors
+    //     console.error(error);
+    //     this.apiResponse = error;
     //   }
     // });
   }
