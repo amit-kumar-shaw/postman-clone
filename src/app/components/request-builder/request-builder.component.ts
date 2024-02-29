@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiRequest } from 'src/app/models/api-request.model';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-request-builder',
@@ -18,11 +20,12 @@ export class RequestBuilderComponent implements OnInit {
   ngOnInit(): void {}
 
   sendRequest(): void {
-    const request = {
+    const request: ApiRequest = {
       method: this.selectedMethod,
       url: this.requestUrl,
       // Add more properties as needed
     };
+    console.log(request);
     // this.apiService.sendRequest(request).subscribe({
     //   next: (response) => {
     //     console.log(response); // Handle the response accordingly

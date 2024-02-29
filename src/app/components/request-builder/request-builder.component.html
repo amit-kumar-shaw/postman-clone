@@ -17,7 +17,7 @@
   <mat-grid-tile colspan="3">
     <mat-form-field appearance="outline" style="width: 100%">
       <mat-label>URL</mat-label>
-      <input matInput placeholder="http://192.168.1.1:80" />
+      <input matInput [(ngModel)]="requestUrl" placeholder="http://192.168.1.1:80" />
     </mat-form-field>
   </mat-grid-tile>
   <mat-grid-tile>
