@@ -1,17 +1,43 @@
-<mat-form-field appearance="outline">
-  <mat-label>Method</mat-label>
-  <mat-select [(value)]="selectedMethod">
-    <mat-option *ngFor="let method of httpMethods" [value]="method">
-      {{ method }}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+<mat-grid-list
+  cols="5"
+  rowHeight="fit"
+  gutterSize="4"
+  style="height: auto; min-height: 100px"
+>
+  <mat-grid-tile
+    ><mat-form-field appearance="outline">
+      <mat-label>Method</mat-label>
+      <mat-select [(value)]="selectedMethod">
+        <mat-option *ngFor="let method of httpMethods" [value]="method">
+          {{ method }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3">
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label>URL</mat-label>
+      <input matInput placeholder="http://192.168.1.1:80" />
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button mat-raised-button color="primary" (click)="sendRequest()">
+      Send Request
+    </button>
+  </mat-grid-tile>
+</mat-grid-list>
 
-<mat-form-field appearance="outline">
-  <mat-label>URL</mat-label>
-  <input matInput >
-</mat-form-field>
-
-<button mat-raised-button color="primary" (click)="sendRequest()">
-  Send Request
-</button>
+<mat-grid-list
+  cols="1"
+  rowHeight="fit"
+  style="height: auto; min-height: 100px"
+>
+  <mat-grid-tile>
+    <mat-tab-group style="width: 100%;">
+      <mat-tab label="Params"> Under development </mat-tab>
+      <mat-tab label="Header"> Under development </mat-tab>
+      <mat-tab label="Body"> Under development </mat-tab>
+      <mat-tab label="Authorization"> Under development </mat-tab>
+    </mat-tab-group>
+     </mat-grid-tile>
+</mat-grid-list>
