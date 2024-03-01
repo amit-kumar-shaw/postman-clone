@@ -4,24 +4,31 @@
   style="height: auto; min-height: 500px"
 >
   <mat-grid-tile> -->
-<div style="width: 100%; background-color: #f3f6f7;">
-  <mat-tab-group>
+<div style="width: 100%; background-color: #f3f6f7; border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+  <div cdkScrollable style="height: 600px; overflow-y: auto">
+  <mat-tab-group style="margin-left: 16px; margin-right: 16px;">
     <mat-tab label="Body">
       <div *ngIf="responseData">
         <h3>
           Response: {{ responseData.status }} {{ responseData.statusText }}
         </h3>
-        <div cdkScrollable style="height: 400px; overflow-y: auto">
+        <!-- <div cdkScrollable style="height: 400px; overflow-y: auto"> -->
           <pre>{{ responseData.body | json }}</pre>
         </div>
-      </div>
+      <!-- </div> -->
     </mat-tab>
     <mat-tab label="Header">
       <div *ngIf="responseData">
-        {{ responseData }}
+        <pre> {{ responseData.headers | json }} </pre>
+      </div>
+    </mat-tab>
+    <mat-tab label="Full Response">
+      <div *ngIf="responseData">
+        <pre> {{ responseData | json }} </pre>
       </div>
     </mat-tab>
   </mat-tab-group>
+  </div>
 </div>
 <!-- </mat-grid-tile>
 </mat-grid-list> -->
