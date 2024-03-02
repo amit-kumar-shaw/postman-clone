@@ -1,0 +1,33 @@
+<div style="height: 4px"></div>
+
+<div *ngFor="let param of params; let i = index" style="width: 100%">
+  <mat-form-field appearance="outline" style="width: 25%; margin-right: 2px">
+    <mat-label>Key</mat-label>
+    <input matInput [(ngModel)]="param.key" />
+  </mat-form-field>
+  <mat-form-field
+    appearance="outline"
+    style="width: 65%; margin-right: 2px; height: 100%"
+  >
+    <mat-label>Value</mat-label>
+    <input matInput [(ngModel)]="param.value" />
+  </mat-form-field>
+  <button
+    *ngIf="i == params.length - 1"
+    mat-stroked-button
+    color="primary"
+    (click)="addParam()"
+    style="width: 9%; height: 4em; vertical-align: top"
+  >
+    Add
+  </button>
+  <button
+    *ngIf="i != params.length - 1"
+    mat-stroked-button
+    color="warn"
+    (click)="deleteParam(i)"
+    style="width: 9%; height: 4em; vertical-align: top"
+  >
+    Delete
+  </button>
+</div>

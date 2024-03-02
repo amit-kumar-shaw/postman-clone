@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, importProvidersFrom } from '@angular/core';
 import { ApiRequest } from 'src/app/models/api-request.model';
 import { ApiService } from 'src/app/services/api.service';
+import { KeyValueComponent } from 'src/app/key-value/key-value.component';
 
 @Component({
   selector: 'app-request-builder',

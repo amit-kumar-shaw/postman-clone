@@ -15,12 +15,14 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
 import { HttpClientModule } from '@angular/common/http';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { KeyValueComponent } from './key-value/key-value.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RequestBuilderComponent,
-    ResponseViewerComponent
+    ResponseViewerComponent,
+    KeyValueComponent
   ],
   imports: [
     BrowserModule,

@@ -1,49 +1,79 @@
-<div style="background-color: #f3f6f7; border-top-left-radius: 16px; border-top-right-radius: 16px;">
-<mat-grid-list
-  cols="6"
-  rowHeight="fit"
-  gutterSize="4"
-  style="height: auto; min-height: 100px; background-color: #f3f6f7; margin-left: 16px;margin-right: 16px;"
+<div
+  style="
+    background-color: #f3f6f7;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  "
 >
-  <mat-grid-tile
-    ><mat-form-field appearance="outline" style="width: 100%; margin-top: auto;">
-      <mat-label>Method</mat-label>
-      <mat-select [(value)]="selectedMethod">
-        <mat-option *ngFor="let method of httpMethods" [value]="method">
-          {{ method }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </mat-grid-tile>
-  <mat-grid-tile colspan="4">
-    <mat-form-field appearance="outline" style="width: 100%; margin-top: auto;">
-      <mat-label>URL</mat-label>
-      <input matInput [(ngModel)]="requestUrl" placeholder="http://192.168.1.1:80" />
-    </mat-form-field>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <button mat-raised-button color="primary" (click)="sendRequest()" style="width: 100%; vertical-align: middle; height: 4em;">
-      Send
-    </button>
-  </mat-grid-tile>
-</mat-grid-list>
+  <mat-grid-list
+    cols="6"
+    rowHeight="fit"
+    gutterSize="4"
+    style="
+      height: auto;
+      min-height: 100px;
+      background-color: #f3f6f7;
+      margin-left: 16px;
+      margin-right: 16px;
+    "
+  >
+    <mat-grid-tile
+      ><mat-form-field
+        appearance="outline"
+        style="width: 100%; margin-top: auto"
+      >
+        <mat-label>Method</mat-label>
+        <mat-select [(value)]="selectedMethod">
+          <mat-option *ngFor="let method of httpMethods" [value]="method">
+            {{ method }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4">
+      <mat-form-field
+        appearance="outline"
+        style="width: 100%; margin-top: auto"
+      >
+        <mat-label>URL</mat-label>
+        <input
+          matInput
+          [(ngModel)]="requestUrl"
+          placeholder="http://192.168.1.1:80"
+        />
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="sendRequest()"
+        style="width: 100%; vertical-align: middle; height: 4em"
+      >
+        Send
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
 <!-- <mat-grid-list
   cols="1"
   rowHeight="fit"
   style="height: auto; min-height: 100px"
 > -->
-  <!-- <mat-grid-tile> -->
-    <div style="height: 300px; border: 16px;border-color: black; background-color: #abccd3;">
-    <mat-tab-group style="width: 100%; margin-left: 16px; margin-right: 16px; margin-bottom: 16px;">
-      <mat-tab label="Params"> 
-        <div style="height: 30px; width: 30px; border:8pt;border-color: black;">
-        </div>
-      </mat-tab>
-      <mat-tab label="Header"> Under development </mat-tab>
-      <mat-tab label="Body"> Under development </mat-tab>
-      <mat-tab label="Authorization"> Under development </mat-tab>
-    </mat-tab-group>
-  </div>
-     <!-- </mat-grid-tile>
+<!-- <mat-grid-tile> -->
+<div style="height: 300px; background-color: #abccd3">
+  <mat-tab-group
+    style="margin-left: 16px; margin-right: 16px; margin-bottom: 16px"
+  >
+    <mat-tab label="Params">
+      <div cdkScrollable style="height: 240px; overflow-y: auto">
+        <app-key-value></app-key-value>
+      </div>
+    </mat-tab>
+    <mat-tab label="Header"> Under development </mat-tab>
+    <mat-tab label="Body"> Under development </mat-tab>
+    <mat-tab label="Authorization"> Under development </mat-tab>
+  </mat-tab-group>
+</div>
+<!-- </mat-grid-tile>
 </mat-grid-list> -->
